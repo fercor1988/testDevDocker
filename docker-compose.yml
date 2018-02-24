@@ -1,0 +1,18 @@
+nginx:
+  build: .
+  links:
+      - worker2:worker2
+      - worker1:worker1
+  ports:
+      - "8080:8080"
+
+worker1:
+  image: fercor3188/devsu
+  ports:
+      - "8080"
+
+worker2:
+  image: fercor3188/devsu
+  ports:
+      - "8080"
+
